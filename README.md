@@ -1,8 +1,11 @@
 # GZIP
 
 Многопоточный GZIP-компрессор/декомпрессор файлов.  
-Использован паттерн "Consumer-Producer", реализована thread-safe очередь (аналог ConcurrentQueue).
+
+#### Ключевые идеи:
+* использован паттерн "Consumer-Producer", где в роли Producer'а выступает поток, генерирующий блоки памяти для обработки компрессором, а Consumer'ы - потоки, компрессирующие (декомпрессирующие) данные блоки;
+* реализована thread-safe очередь (аналог ConcurrentQueue) для общения между Consumer'ами и Producer'ом.
 
 Целевая платформа: .NET 3.5   
 
-Использование: GZipTest.exe compress/decompress <input path> <output path>
+**Использование: `GZipTest.exe compress/decompress <input path> <output path>`**
