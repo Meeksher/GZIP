@@ -146,7 +146,7 @@ namespace GZIP
                 errorFlag = true;
             }
 
-            if (errorFlag) Console.WriteLine("Error occured, the programm have not finished correctly.");
+            if (errorFlag) Console.WriteLine("Error occured, the program has not finished correctly.");
             else Console.WriteLine("Compressing finished.");
         }
 
