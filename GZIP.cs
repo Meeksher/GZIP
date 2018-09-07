@@ -10,7 +10,7 @@ namespace GZIP
     public abstract class GZIP
     {
         protected FileInfo input, output;
-        protected int blockSize = 10000000; // = new ComputerInfo().AvailablePhysicalMemory
+        protected int blockSize = 80000; // <80k -> small object heap, >80 -> large object heap
         protected int countThreads = Environment.ProcessorCount;
         protected MemoryBlocksQueue producerQueue = new MemoryBlocksQueue();
         protected MemoryBlocksQueue consumerQueue = new MemoryBlocksQueue();
